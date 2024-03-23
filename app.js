@@ -3,8 +3,12 @@
 /* 02/03/2024 */
 
 const express = require('express');
+const loggerMiddleware = require('./loggerMiddleware');
+
 const app = express();
 const port = 3000;
+
+app.use(loggerMiddleware);
 app.set('view engine', 'ejs');
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
